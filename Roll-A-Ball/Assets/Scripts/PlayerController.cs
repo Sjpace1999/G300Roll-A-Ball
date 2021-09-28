@@ -6,7 +6,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 0;
+    public float speedRot = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
 
@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private int count;
     private float movementX;
     private float movementY;
+
+    private float rotationA;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +30,20 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
 
-        movementX = movementVector.x;
-        movementY = movementVector.y;
+        //movementX = movementVector.x;
+        //movementY = movementVector.y;
+
+        if (movementVector.x > 0) {
+            rotationA = 1*speedRot;
+        }
+        else if (movementVector.x < 0)
+        {
+            rotationA = -1*speedRot;
+        }
+        else
+        {
+            rotationA = 0;
+        }
     }
 
     void SetCountText()
@@ -43,8 +57,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
+        //Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        //rb.AddForce(movement * speed);
+
+        transform.Rotate(new Vector3(0, rotationA, 0) * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
