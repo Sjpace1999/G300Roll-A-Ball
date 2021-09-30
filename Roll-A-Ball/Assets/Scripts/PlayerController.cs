@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float ExtSpeed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public Rigidbody projectile;
 
     private float speed;
     private Rigidbody rb;
@@ -26,6 +27,15 @@ public class PlayerController : MonoBehaviour
 
         SetCountText();
         winTextObject.SetActive(false);
+    }
+
+    void OnFire()
+    {
+        Rigidbody clone;
+        clone = Instantiate(projectile, transform.position, Quaternion.Euler(0, transform.rotation.y+35, 0));
+        clone.velocity = transform.TransformDirection(Vector3.forward * 10);
+
+        //script from https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
     }
 
     void OnMove(InputValue movementValue)
