@@ -7,9 +7,11 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public float speedRot = 0;
+    public float ExtSpeed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
 
+    private float speed;
     private Rigidbody rb;
     private int count;
     private float movementX;
@@ -44,6 +46,15 @@ public class PlayerController : MonoBehaviour
         {
             rotationA = 0;
         }
+
+        if(movementVector.y > 0)
+        {
+            speed = ExtSpeed;
+        }
+        else
+        {
+            speed = 0;
+        }
     }
 
     void SetCountText()
@@ -58,7 +69,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        //rb.AddForce(movement * speed);
+        rb.AddRelativeForce(Vector3.forward * speed);
 
         transform.Rotate(new Vector3(0, rotationA, 0) * Time.deltaTime);
     }

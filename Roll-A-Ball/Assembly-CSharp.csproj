@@ -676,6 +676,15 @@
  <Reference Include="Unity.RenderPipelines.Core.Runtime">
  <HintPath>C:/Users/stjpace/Documents/GitHub/G300Roll-A-Ball/Roll-A-Ball/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.ProBuilder.AddOns.Editor">
+ <HintPath>C:/Users/stjpace/Documents/GitHub/G300Roll-A-Ball/Roll-A-Ball/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder">
+ <HintPath>C:/Users/stjpace/Documents/GitHub/G300Roll-A-Ball/Roll-A-Ball/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.Editor">
+ <HintPath>C:/Users/stjpace/Documents/GitHub/G300Roll-A-Ball/Roll-A-Ball/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/stjpace/Documents/GitHub/G300Roll-A-Ball/Roll-A-Ball/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
@@ -702,6 +711,9 @@
  </Reference>
  <Reference Include="Unity.RenderPipelines.Universal.Editor">
  <HintPath>C:/Users/stjpace/Documents/GitHub/G300Roll-A-Ball/Roll-A-Ball/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+ <HintPath>C:/Users/stjpace/Documents/GitHub/G300Roll-A-Ball/Roll-A-Ball/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
  <HintPath>C:/Users/stjpace/Documents/GitHub/G300Roll-A-Ball/Roll-A-Ball/Library/ScriptAssemblies/Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
