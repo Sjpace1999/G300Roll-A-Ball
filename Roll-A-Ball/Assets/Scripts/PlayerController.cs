@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float ExtSpeed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public GameObject loseTextObject;
     public Rigidbody projectile;
 
     private float speed;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
         SetCountText();
         winTextObject.SetActive(false);
+        loseTextObject.SetActive(false);
     }
 
     void OnFire()
@@ -69,12 +71,20 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
-        if(count >= 12)
-        {
-            winTextObject.SetActive(true);
-        }
+
     }
+
+    void SetLoseText()
+    {
+            
+    }
+
+    public void incrementCount()
+    {
+        count++;
+        SetCountText();
+    }
+
 
     void FixedUpdate()
     {
@@ -89,8 +99,9 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
-            count++;
-            SetCountText();
+            loseTextObject.SetActive(true);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
