@@ -24,6 +24,7 @@ public class ProjectileController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             playerController.incrementCount();
+            playerController.spawnEnemy(transform.position);
             Destroy(gameObject);
             
         }
