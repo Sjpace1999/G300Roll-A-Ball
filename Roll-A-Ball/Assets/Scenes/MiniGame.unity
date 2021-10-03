@@ -4434,6 +4434,7 @@ MonoBehaviour:
   winTextObject: {fileID: 1136577539}
   loseTextObject: {fileID: 1166104550}
   projectile: {fileID: 228747608}
+  enemy: {fileID: 6942453134224210282, guid: aee860cca8413dc4998ec9f57f760ff1, type: 3}
 --- !u!114 &1009147146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5473,7 +5474,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24176
+  m_Name: pb_Mesh21390
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
