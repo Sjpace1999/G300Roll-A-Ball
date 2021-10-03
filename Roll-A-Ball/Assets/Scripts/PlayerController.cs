@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private int count;
     private float movementX;
     private float movementY;
-    private int numEnemies=12;
+    //private int numEnemies=12;
 
     private float rotationA;
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody clone;
         clone = Instantiate(projectile, transform.position, Quaternion.Euler(0, transform.rotation.y+35, 0));
-        clone.velocity = transform.TransformDirection(Vector3.forward * 10);
+        clone.velocity = transform.TransformDirection(Vector3.forward * 20);
 
         //script from https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
     }
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 50)
+        if (count >= 30)
         {
             winTextObject.SetActive(true);
         }
@@ -83,15 +83,15 @@ public class PlayerController : MonoBehaviour
     public void incrementCount()
     {
         count++;
-        numEnemies--;
+        //numEnemies--;
         SetCountText();
     }
 
     public void spawnEnemy(Vector3 position)
     {
-        Rigidbody clone1;
-        Rigidbody clone2;
-        Instantiate(enemy, position, Quaternion.Euler(45, 45, 45));
+        if (count <= 18) {
+            Instantiate(enemy, new Vector3(Random.Range(-9.0f, 9.0f), 0.5f, Random.Range(-9.0f, 9.0f)), Quaternion.Euler(45, 45, 45));
+        }
     }
 
 
